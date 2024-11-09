@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM arm64v8/alpine:3.18
 # Arguement for Password
 ARG PASSWORD=password
 # Installing the openssh and bash package, removing the apk cache
