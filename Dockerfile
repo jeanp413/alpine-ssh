@@ -2,7 +2,7 @@ FROM arm64v8/alpine:3.18
 # Arguement for Password
 ARG PASSWORD=password
 # Installing the openssh and bash package, removing the apk cache
-RUN apk --update add --no-cache openssh bash \
+RUN apk --update add --no-cache openssh bash libstdc++ \
   && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
   && echo "root:${PASSWORD}" | chpasswd \
   && rm -rf /var/cache/apk/*
